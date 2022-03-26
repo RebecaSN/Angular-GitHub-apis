@@ -1,0 +1,70 @@
+<!-- <h1 id="titulo" mat-dialog-title>Dados de: {{usarname}}</h1> -->
+<div mat-dialog-content>
+    <mat-progress-spinner 
+    color="accent"
+     mode="indeterminate"
+     *ngIf="user==null; else content">
+    </mat-progress-spinner>
+
+    <ng-template #content class="pai">
+      <h2>{{user?.name}}</h2>
+
+      {{user?.login}}<br>
+
+      <img id="foto" src="{{user?.avatar_url}}" alt="Foto do Username inserido"><br><br>
+            
+      {{user?.bio}}<br><br>
+        
+      
+      <div class="seguidores">
+        <mat-icon>supervisor_account </mat-icon>
+        {{user?.followers}} followers ·
+        {{user?.following}} following
+      </div>
+       
+      <div class="localizacao">
+        <mat-icon>room</mat-icon>
+        {{user?.location}}
+      </div>
+      
+
+      <div class="repositorios">
+        {{user?.repos_url}}
+      </div>
+
+
+       
+      
+
+        
+        
+        
+        
+        
+        
+        
+        
+        <!-- <a [href]="user?.html_url" target="_blank"> 
+            {{user?.name}}
+        </a> -->
+    </ng-template>
+  
+  
+  
+  
+    <!-- <p *ngIf="user != null">
+        {{user | json}}
+    </p> -->
+</div>
+<!--enquanto a variavel for nula, vai ficar rodando o spinner-->
+<!--precisa saber qual o nome de usuario que ele tem que pesquisar -->
+<!--
+    Terminar projeto:
+    .Estilizar bonitinho, com a bio, seguidores, biografia, localização
+    .Pegar tambem os dados do repositorio:, no repos_url, ele te manda o link para vc mandar os dados 
+ do repositorio, temos que fazer outra requisição. só coloca algums dados de cada repositorio-->
+<!--modulo do proprio angula que permite trabalhar com http, que é o ModuloCleint, trabalha com conservables para 
+fazer as requisições http-->
+
+
+
