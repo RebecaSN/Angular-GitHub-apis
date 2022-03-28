@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { GhUser } from '../ghUser';
+import { GhRepos } from '../gh-repos';
 
 @Injectable()
 export class GhApiService {
@@ -23,6 +24,12 @@ export class GhApiService {
   }//quero pegar os dados dessa api, por isso utilizo assim, para ele me retornar dados
   //para qual link ele tem que fazer a requisiçã, está entre ()
   //servicos que fazem requisições http, retornam obervables, e tem que ter o mesmo tipo de dados que a pi vai retornar, e vou receber isso no GhUser
-
+ 
+  findUserRepos(username:string):Observable<GhRepos[]>{
+    return this.http.get<GhRepos[]>(`${this.baseUrl}/${username}/repos`)
+      
+    
+  }
+ 
 }//vamos fazer as riquições http a partir do http client
 //vamos injetar um objeto do tipo htto client para poder fazer as requisições

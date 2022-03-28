@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GhRepos } from '../../gh-repos';
 import { GhUser } from '../../ghUser';
 import { GhApiService } from '../../services/gh-api.service';
 
@@ -10,10 +11,11 @@ import { GhApiService } from '../../services/gh-api.service';
 export class GhDialogComponent implements OnInit {
   
   usarname:string=''
-  
-  repos_url:[]=[]
+
+  repos:GhRepos[] | undefined 
   
   user:GhUser | null = null
+
   
   constructor(
     private ghServices:GhApiService
@@ -26,13 +28,19 @@ export class GhDialogComponent implements OnInit {
        
       }//o dado retornado da api, to guardando tendo de uma propriedade para poder usar normalmente
     )
+    this.ghServices.findUserRepos(this.usarname).subscribe(
+      (gRepos)=>{
+        this.repos=gRepos
+      }
+    )
 
-
+   
 
 
 
 
   }
+ 
   
   
   

@@ -1,8 +1,33 @@
 #foto{
     border-radius: 50%;
     border:5px solid white;
-    width: 170px;
-    height: 170px;
-    margin-left: 60px;
+    width: 250px;
+    height: 250px;
+    margin-left: 30%
 }
-
+#nome{
+    text-decoration: none;
+    color: white;
+}
+/* mat-dialog-content{
+    background-color: red;
+} */
+#card{
+    text-decoration: none;
+    color:white;
+}
+.repositorios{
+    flex-direction: column;
+    display: flex;
+    background-color: gray;
+    margin:3px
+}
+#bio{
+    margin-left:35%;
+}
+.seguidores{
+    margin-left:35%;
+}
+.localizacao{
+    margin-left:35%;
+}

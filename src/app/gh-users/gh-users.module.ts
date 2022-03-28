@@ -9,6 +9,7 @@ import { GhApiService } from './services/gh-api.service';
 
 
 
+
 @NgModule({
   declarations: [
     GhHomeComponent,
@@ -27,7 +28,8 @@ import { GhApiService } from './services/gh-api.service';
 
   ],
   providers:[
-   GhApiService
+   GhApiService,
+
   ]//dentro desse provider eles aceitam quais serviços a gente vai utilizar, e quais interceptores a gente vai utilizar
 })
 export class GhUsersModule { }
